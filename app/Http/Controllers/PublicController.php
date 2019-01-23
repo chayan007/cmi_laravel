@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactMailer;
 use App\Mail\ProductMailer;
+use Illuminate\Support\Facades\Mail;
 use App\Product;
 use Illuminate\Http\Request;
 
@@ -59,12 +61,18 @@ class PublicController extends Controller
         $product = $request->product;
 
         Mail::to('prodyutdatta@gmail.com')->send(new ProductMailer($name, $email, $contact, $product));
-
         return back();
     }
 
     public function contactLead(Request $request)
     {
+        $name = $request->name;
+        $email = $request->email;
+        $contact = $request->contact;
+        $message = $request->message;
+
+        Mail::to('prodyutdatta@gmail.com')->send(new ContactMailer($name, $email, $contact, $message));
+        return back();
 
     }
 }

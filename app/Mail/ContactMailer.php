@@ -17,9 +17,12 @@ class ContactMailer extends Mailable
      * @return void
      */
     public $name, $email, $contact, $message;
-    public function __construct()
+    public function __construct($name, $email, $contact, $message)
     {
-        //
+        $this->name = $name;
+        $this->email = $email;
+        $this->contact = $contact;
+        $this->message = $message;
     }
 
     /**
@@ -29,6 +32,6 @@ class ContactMailer extends Mailable
      */
     public function build()
     {
-        return $this->view('view.name');
+        return $this->view('mail.contact');
     }
 }
