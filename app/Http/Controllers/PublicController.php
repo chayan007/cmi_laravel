@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ProductMailer;
 use App\Product;
 use Illuminate\Http\Request;
 
@@ -48,5 +49,22 @@ class PublicController extends Controller
     public function dashboard()
     {
         return view('auth.pages.dashboard');
+    }
+
+    public function productLead(Request $request)
+    {
+        $name = $request->name;
+        $email = $request->email;
+        $contact = $request->contact;
+        $product = $request->product;
+
+        Mail::to('prodyutdatta@gmail.com')->send(new ProductMailer($name, $email, $contact, $product));
+
+        return back();
+    }
+
+    public function contactLead(Request $request)
+    {
+
     }
 }

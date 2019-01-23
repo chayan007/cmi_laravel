@@ -72,7 +72,7 @@
                                     }
                                 </script>
                             </div>
-                            <form id="MyForm" action="/contact" method="post" style="display: none; padding: 20px">
+                            <form id="MyForm" action="/lead" method="post" style="display: none; padding: 20px">
                                 @csrf
                                 <input type="hidden" name="product" value="{{ $product->name }}">
                                 <div class="form-group">
@@ -89,13 +89,12 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="">Phone No.</label>
-                                    <input type="text" class="form-control" name="phone" id=""
+                                    <input type="text" class="form-control" name="contact" id=""
                                            aria-describedby="helpId" placeholder="Type your contact number">
                                     <small id="helpId" class="form-text text-muted">So that we could explain you in details</small>
                                 </div>
                                 <button type="submit" class="btn btn-success btn-block">DONE !</button>
                             </form>
-
                         </div>
                     </div>
                 </div>

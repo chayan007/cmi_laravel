@@ -12,12 +12,14 @@
 */
 
 Route::get('/', 'PublicController@home');
+Route::post('/contact', 'PublicController@contactLead');
 Route::get('/contact', 'PublicController@contact');
 Route::get('/about', 'PublicController@about');
 Route::get('/shop', 'PublicController@products');
 Route::get('/shop/{slug}', 'ProductController@singleProduct');
 Route::get('/shop/category/{category}', 'PublicController@productByCategory');
 Route::get('/shop/company/{company}', 'PublicController@productByCompany');
+Route::post('/lead', 'PublicController@productLead');
 
 Auth::routes();
 
