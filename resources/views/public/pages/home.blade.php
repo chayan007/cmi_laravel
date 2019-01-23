@@ -11,9 +11,9 @@
                             <div class="row single-slide align-items-center d-flex">
                                 <div class="col-lg-5 col-md-6">
                                     <div class="banner-content">
-                                        <h1>Nike New <br>Collection!</h1>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                                            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+                                        <h1>Core Medical <br>Instruments!</h1>
+                                        <p>We are the best medical instruments dealer all over Asia. Our 24 x 7 technical support and
+                                        most hi-tech machine quality has brought us wonders.</p>
                                         <div class="add-bag d-flex align-items-center">
                                             {{--<a class="add-btn" href=""><span class="lnr lnr-cross"></span></a>--}}
                                             {{--<span class="add-text text-uppercase">Add to Bag</span>--}}
@@ -30,9 +30,9 @@
                             <div class="row single-slide align-items-center d-flex">
                                 <div class="col-lg-5">
                                     <div class="banner-content">
-                                        <h1>Nike New <br>Collection!</h1>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                                            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+                                        <h1>Core Medical <br>Accessories & Disposables!</h1>
+                                        <p>We also serve high quality needs for every medical environments. We are on a mission
+                                            to upgrade every medical environments as to increase comfort to patient and management.</p>
                                         <div class="add-bag d-flex align-items-center">
                                             {{--<a class="add-btn" href=""><span class="lnr lnr-cross"></span></a>--}}
                                             {{--<span class="add-text text-uppercase">Add to Bag</span>--}}
@@ -62,8 +62,8 @@
                             <div class="f-icon">
                                 <img src="{{ asset('img/features/f-icon1.png') }}" alt="">
                             </div>
-                            <h6>Free Delivery</h6>
-                            <p>Free Shipping on all order</p>
+                            <h6>Worldwide Shipping</h6>
+                            <p>Shipping on all order</p>
                         </div>
                     </div>
                     <!-- single features -->
@@ -72,8 +72,8 @@
                             <div class="f-icon">
                                 <img src="{{ asset('img/features/f-icon2.png') }}" alt="">
                             </div>
-                            <h6>Return Policy</h6>
-                            <p>Free Shipping on all order</p>
+                            <h6>Technical Services</h6>
+                            <p>Best technical team to assist you.</p>
                         </div>
                     </div>
                     <!-- single features -->
@@ -83,7 +83,7 @@
                                 <img src="{{ asset('img/features/f-icon3.png') }}" alt="">
                             </div>
                             <h6>24/7 Support</h6>
-                            <p>Free Shipping on all order</p>
+                            <p>We are happy to talk to you</p>
                         </div>
                     </div>
                     <!-- single features -->
@@ -93,7 +93,7 @@
                                 <img src="{{ asset('img/features/f-icon4.png') }}" alt="">
                             </div>
                             <h6>Secure Payment</h6>
-                            <p>Free Shipping on all order</p>
+                            <p>We accept every digital payments</p>
                         </div>
                     </div>
                 </div>
@@ -113,7 +113,7 @@
                                     <img class="img-fluid w-100" src="{{ asset('img/category/c1.jpg') }}" alt="">
                                     <a href="img/category/c1.jpg" class="img-pop-up" target="_blank">
                                         <div class="deal-details">
-                                            <h6 class="deal-title">Sneaker for Sports</h6>
+                                            <h6 class="deal-title">OT Room Instruments</h6>
                                         </div>
                                     </a>
                                 </div>
@@ -124,7 +124,7 @@
                                     <img class="img-fluid w-100" src="{{ asset('img/category/c2.jpg') }}" alt="">
                                     <a href="img/category/c2.jpg" class="img-pop-up" target="_blank">
                                         <div class="deal-details">
-                                            <h6 class="deal-title">Sneaker for Sports</h6>
+                                            <h6 class="deal-title">Radiology</h6>
                                         </div>
                                     </a>
                                 </div>
@@ -135,7 +135,7 @@
                                     <img class="img-fluid w-100" src="{{ asset('img/category/c3.png') }}" alt="">
                                     <a href="img/category/c3.jpg" class="img-pop-up" target="_blank">
                                         <div class="deal-details">
-                                            <h6 class="deal-title">Product for Couple</h6>
+                                            <h6 class="deal-title">Accessories & Disposables</h6>
                                         </div>
                                     </a>
                                 </div>
@@ -146,7 +146,7 @@
                                     <img class="img-fluid w-100" src="{{ asset('img/category/c4.jpg') }}" alt="">
                                     <a href="img/category/c4.jpg" class="img-pop-up" target="_blank">
                                         <div class="deal-details">
-                                            <h6 class="deal-title">Sneaker for Sports</h6>
+                                            <h6 class="deal-title">Medical Furnitures</h6>
                                         </div>
                                     </a>
                                 </div>
@@ -159,7 +159,7 @@
                             <img class="img-fluid w-100" src="{{ asset('img/category/c5.jpg') }}" alt="">
                             <a href="img/category/c5.jpg" class="img-pop-up" target="_blank">
                                 <div class="deal-details">
-                                    <h6 class="deal-title">Sneaker for Sports</h6>
+                                    <h6 class="deal-title">Neurology</h6>
                                 </div>
                             </a>
                         </div>

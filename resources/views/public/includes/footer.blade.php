@@ -5,8 +5,11 @@
                 <div class="single-footer-widget">
                     <h6>About Us</h6>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore
-                        magna aliqua.
+                        Our company is dedicated to mission on upgrading medical environments keeping cost as a constraint.
+                        We are offering our services all over Asia with our fantastic technical assistance. We give you the best
+                        machines, furnitures, accessories & disposables you wish for your nursing home. 1K+ customers trust our name, you
+                        might experiment us too. We are suggested by top notch doctors and management proffessionals due to our awesome support.
+                        Call us and get the experience.
                     </p>
                 </div>
             </div>
