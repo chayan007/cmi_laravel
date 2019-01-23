@@ -41,7 +41,7 @@ Route::group( ['middleware' => 'auth' ], function()
     Route::view('/addCompany', 'admin.addCompany');
     Route::post('/addProduct', 'ProductController@addProduct');
     Route::post('/updateProduct/{id}', 'ProductController@update');
-    Route::get('/deleteProduct/{id}', 'ProductController@delete');
+    Route::get('/deleteProduct/{id}', 'ProductController@deleteProduct');
     Route::post('/addCategory', 'CatComController@addCategory');
     Route::post('/updateCategory/{id}', 'CatComController@update');
     Route::get('/deleteCategory/{id}', 'CatComController@delete');
