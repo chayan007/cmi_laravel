@@ -11,14 +11,13 @@
 |
 */
 
-Route::view('/', 'public.pages.single');
-//Route::get('/', 'PublicController@home');
+Route::get('/', 'PublicController@home');
 Route::get('/contact', 'PublicController@contact');
 Route::get('/about', 'PublicController@about');
 Route::get('/shop', 'PublicController@products');
-Route::get('/shop/{slug}', 'PublicController@singleProduct');
-Route::get('/shop/{category}', 'PublicController@productByCategory');
-Route::get('/shop/{company}', 'PublicController@productByCompany');
+Route::get('/shop/{slug}', 'ProductController@singleProduct');
+Route::get('/shop/category/{category}', 'PublicController@productByCategory');
+Route::get('/shop/company/{company}', 'PublicController@productByCompany');
 
 Auth::routes();
 
@@ -30,7 +29,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group( ['middleware' => 'auth' ], function()
 {
-    Route::get('logout', 'Auth\LoginController@logout')->name('logout');
+    Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
     Route::view('/admin', 'admin.dashboard');
     Route::get('/product', 'ProductController@getProduct');
     Route::get('/category', 'CatComController@getCategory');

@@ -22,7 +22,7 @@ class AppServiceProvider extends ServiceProvider
             $view->with([
                 'categories' => Category::all(),
                 'companies' => Company::all(),
-                'products' => Product::all(),
+                'products' => Product::orderBy('created_at', 'desc')->take(20)->get(),
             ]);
         });
     }

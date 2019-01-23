@@ -60,7 +60,7 @@
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="single-features">
                             <div class="f-icon">
-                                <img src="img/features/f-icon1.png" alt="">
+                                <img src="{{ asset('img/features/f-icon1.png') }}" alt="">
                             </div>
                             <h6>Free Delivery</h6>
                             <p>Free Shipping on all order</p>
@@ -70,7 +70,7 @@
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="single-features">
                             <div class="f-icon">
-                                <img src="img/features/f-icon2.png" alt="">
+                                <img src="{{ asset('img/features/f-icon2.png') }}" alt="">
                             </div>
                             <h6>Return Policy</h6>
                             <p>Free Shipping on all order</p>
@@ -80,7 +80,7 @@
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="single-features">
                             <div class="f-icon">
-                                <img src="img/features/f-icon3.png" alt="">
+                                <img src="{{ asset('img/features/f-icon3.png') }}" alt="">
                             </div>
                             <h6>24/7 Support</h6>
                             <p>Free Shipping on all order</p>
@@ -90,7 +90,7 @@
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="single-features">
                             <div class="f-icon">
-                                <img src="img/features/f-icon4.png" alt="">
+                                <img src="{{ asset('img/features/f-icon4.png') }}" alt="">
                             </div>
                             <h6>Secure Payment</h6>
                             <p>Free Shipping on all order</p>
@@ -186,38 +186,37 @@
                     </div>
                     <div class="row">
                         <!-- single product -->
-                        <div class="col-lg-3 col-md-6">
-                            <div class="single-product">
-                                <img class="img-fluid" src="img/product/p1.jpg" alt="">
-                                <div class="product-details">
-                                    <h6>addidas New Hammer sole
-                                        for Sports person</h6>
-                                    <div class="price">
-                                        <h6>$150.00</h6>
-                                        <h6 class="l-through">$210.00</h6>
-                                    </div>
-                                    <div class="prd-bottom">
-
-                                        <a href="" class="social-info">
-                                            <span class="ti-bag"></span>
-                                            <p class="hover-text">add to bag</p>
-                                        </a>
-                                        <a href="" class="social-info">
-                                            <span class="lnr lnr-heart"></span>
-                                            <p class="hover-text">Wishlist</p>
-                                        </a>
-                                        <a href="" class="social-info">
-                                            <span class="lnr lnr-sync"></span>
-                                            <p class="hover-text">compare</p>
-                                        </a>
-                                        <a href="" class="social-info">
-                                            <span class="lnr lnr-move"></span>
-                                            <p class="hover-text">view more</p>
-                                        </a>
+                        @foreach($products as $product)
+                            <div class="col-lg-3 col-md-6">
+                                <div class="single-product">
+                                    <img class="img-fluid" src="{{ Storage::url($product->img_1) }}" height="200px" width="350px" alt="">
+                                    <div class="product-details">
+                                        <h6>{{ $product->name }}</h6>
+                                        <div class="price">
+                                            @if($product->price !=0)
+                                                <h6>{{ $product->price }}</h6>
+                                                <h6 class="l-through">@php echo ($product->price + ($product->price * 1/5)) @endphp</h6>
+                                            @else
+                                                <h6 style="font-size: 13px; font-family:'Archivo Narrow'">Contact for Price</h6>
+                                            @endif
+                                        </div>
+                                        <div class="prd-bottom">
+                                            <a href="{{ Storage::url($product->brochure) }}" class="social-info">
+                                                <span class="lnr lnr-sync"></span>
+                                                <p class="hover-text">Brochure</p>
+                                            </a>
+                                            <a href="/shop/{{ $product->slug }}" class="social-info">
+                                                <span class="lnr lnr-move"></span>
+                                                <p class="hover-text">Details</p>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                            @if($loop->iteration == 8)
+                                @break
+                            @endif
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -227,7 +226,7 @@
                     <div class="row justify-content-center">
                         <div class="col-lg-6 text-center">
                             <div class="section-title">
-                                <h1>Coming Products</h1>
+                                <h1>Latest Products</h1>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
                                     dolore
                                     magna aliqua.</p>
@@ -236,38 +235,37 @@
                     </div>
                     <div class="row">
                         <!-- single product -->
-                        <div class="col-lg-3 col-md-6">
-                            <div class="single-product">
-                                <img class="img-fluid" src="img/product/p6.jpg" alt="">
-                                <div class="product-details">
-                                    <h6>addidas New Hammer sole
-                                        for Sports person</h6>
-                                    <div class="price">
-                                        <h6>$150.00</h6>
-                                        <h6 class="l-through">$210.00</h6>
-                                    </div>
-                                    <div class="prd-bottom">
-
-                                        <a href="" class="social-info">
-                                            <span class="ti-bag"></span>
-                                            <p class="hover-text">add to bag</p>
-                                        </a>
-                                        <a href="" class="social-info">
-                                            <span class="lnr lnr-heart"></span>
-                                            <p class="hover-text">Wishlist</p>
-                                        </a>
-                                        <a href="" class="social-info">
-                                            <span class="lnr lnr-sync"></span>
-                                            <p class="hover-text">compare</p>
-                                        </a>
-                                        <a href="" class="social-info">
-                                            <span class="lnr lnr-move"></span>
-                                            <p class="hover-text">view more</p>
-                                        </a>
+                        @foreach($products as $product)
+                            @if($loop->iteration < 9)
+                                @continue
+                            @endif
+                            <div class="col-lg-3 col-md-6">
+                                <div class="single-product">
+                                    <img class="img-fluid" src="{{ Storage::url($product->img_1) }}" height="200px" width="350px" alt="">
+                                    <div class="product-details">
+                                        <h6>{{ $product->name }}</h6>
+                                        <div class="price">
+                                            @if($product->price !=0)
+                                                <h6>{{ $product->price }}</h6>
+                                                <h6 class="l-through">@php echo ($product->price + ($product->price * 1/5)) @endphp</h6>
+                                            @else
+                                                <h6 style="font-size: 13px; font-family:'Archivo Narrow'">Contact for Price</h6>
+                                            @endif
+                                        </div>
+                                        <div class="prd-bottom">
+                                            <a href="" class="social-info">
+                                                <span class="lnr lnr-sync"></span>
+                                                <p class="hover-text">compare</p>
+                                            </a>
+                                            <a href="" class="social-info">
+                                                <span class="lnr lnr-move"></span>
+                                                <p class="hover-text">view more</p>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

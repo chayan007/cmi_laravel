@@ -1,5 +1,5 @@
 @extends('public.layouts.public')
-@section('title', 'Product')
+@section('title', $product->name)
     @section('content')
         <!-- Start Banner Area -->
         <section class="banner-area organic-breadcrumb">
@@ -8,9 +8,9 @@
                     <div class="col-first">
                         <h1>Product Details Page</h1>
                         <nav class="d-flex align-items-center">
-                            <a href="index.html">Home<span class="lnr lnr-arrow-right"></span></a>
-                            <a href="#">Shop<span class="lnr lnr-arrow-right"></span></a>
-                            <a href="single-product.html">product-details</a>
+                            <a href="/">Home<span class="lnr lnr-arrow-right"></span></a>
+                            <a href="/shop">Shop<span class="lnr lnr-arrow-right"></span></a>
+                            <a href="#">{{ $product->name }}</a>
                         </nav>
                     </div>
                 </div>
@@ -25,29 +25,77 @@
                     <div class="col-lg-6">
                         <div class="s_Product_carousel">
                             <div class="single-prd-item">
-                                <img class="img-fluid" src="img/category/s-p1.jpg" alt="">
+                                <img class="img-fluid" src="{{ Storage::url($product->img_1) }}" style="height: 350px; width: 450px;" alt="">
                             </div>
                             <div class="single-prd-item">
-                                <img class="img-fluid" src="img/category/s-p1.jpg" alt="">
+                                <img class="img-fluid"
+                                     @if($product->img_2 != NULL)
+                                        src="{{ Storage::url($product->img_2) }}"
+                                     @else
+                                        src="{{ asset('images/no.jpg') }}"
+                                     @endif
+                                style="height: 350px; width: 450px;" alt="">
                             </div>
                             <div class="single-prd-item">
-                                <img class="img-fluid" src="img/category/s-p1.jpg" alt="">
-                            </div>
+                                <img class="img-fluid"
+                                     @if($product->img_3 != NULL)
+                                     src="{{ Storage::url($product->img_3) }}"
+                                     @else
+                                     src="{{ asset('images/no.jpg') }}"
+                                     @endif
+                                     style="height: 350px; width: 450px;" alt="">                            </div>
                         </div>
                     </div>
                     <div class="col-lg-5 offset-lg-1">
                         <div class="s_product_text">
-                            <h3>Faded SkyBlu Denim Jeans</h3>
-                            <h2>INR. 149.99</h2>
-                            <ul class="list">
-                                <li><a class="active" href="#"><span>Category</span> : Household</a></li>
-                                <li><a href="#"><span>Company</span> : In Stock</a></li>
+                            <h3>{{ $product->name }}</h3>
+                            @if($product->price != 0)
+                                <h2>INR. {{ $product->price }}</h2>
+                            @else
+                                <h2>Contact for Price</h2>
+                            @endif
+                                <ul class="list">
+                                <li><a class="active" href="/shop/category/{{ $categories->where('id', $product->category_id)->first()->id }}"><span>Category</span> : {{ $categories->where('id', $product->category_id)->first()->category }}</a></li>
+                                <li><a href="/shop/company/{{ $companies->where('id', $product->company_id)->first()->id }}"><span>Company</span> : {{ $companies->where('id', $product->company_id)->first()->company }}</a></li>
                             </ul>
                             <div class="card_area d-flex align-items-center" style="margin-top: 40px">
-                                <a class="primary-btn" href="#">Brochure</a>
-                                <a class="icon_btn" href="#"><i class="lnr lnr lnr-diamond"></i></a>
-                                <a class="icon_btn" href="#"><i class="lnr lnr lnr-heart"></i></a>
+                                <a class="primary-btn" href="{{ Storage::url($product->brochure) }}">Brochure</a>
+                                <a class="icon_btn" onclick="toggler()"><i class="lnr lnr lnr-diamond"></i></a>
+                                <script>
+                                    function toggler() {
+                                        var x = document.getElementById("MyForm");
+                                        if (x.style.display === "none") {
+                                            x.style.display = "block";
+                                        } else {
+                                            x.style.display = "none";
+                                        }
+                                    }
+                                </script>
                             </div>
+                            <form id="MyForm" action="/contact" method="post" style="display: none; padding: 20px">
+                                @csrf
+                                <input type="hidden" name="product" value="{{ $product->name }}">
+                                <div class="form-group">
+                                    <label for="">Name</label>
+                                    <input type="text" class="form-control" name="name" id=""
+                                           aria-describedby="helpId" placeholder="Type your name">
+                                    <small id="helpId" class="form-text text-muted">Just a name to call you.</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">E-Mail</label>
+                                    <input type="email" class="form-control" name="email" id=""
+                                           aria-describedby="helpId" placeholder="Type your email id">
+                                    <small id="helpId" class="form-text text-muted">So that we could mail you important things</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Phone No.</label>
+                                    <input type="text" class="form-control" name="phone" id=""
+                                           aria-describedby="helpId" placeholder="Type your contact number">
+                                    <small id="helpId" class="form-text text-muted">So that we could explain you in details</small>
+                                </div>
+                                <button type="submit" class="btn btn-success btn-block">DONE !</button>
+                            </form>
+
                         </div>
                     </div>
                 </div>
@@ -65,21 +113,7 @@
                 </ul>
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                        <p>Beryl Cook is one of Britain’s most talented and amusing artists .Beryl’s pictures feature women of all shapes
-                            and sizes enjoying themselves .Born between the two world wars, Beryl Cook eventually left Kendrick School in
-                            Reading at the age of 15, where she went to secretarial school and then into an insurance office. After moving to
-                            London and then Hampton, she eventually married her next door neighbour from Reading, John Cook. He was an
-                            officer in the Merchant Navy and after he left the sea in 1956, they bought a pub for a year before John took a
-                            job in Southern Rhodesia with a motor company. Beryl bought their young son a box of watercolours, and when
-                            showing him how to use it, she decided that she herself quite enjoyed painting. John subsequently bought her a
-                            child’s painting set for her birthday and it was with this that she produced her first significant work, a
-                            half-length portrait of a dark-skinned lady with a vacant expression and large drooping breasts. It was aptly
-                            named ‘Hangover’ by Beryl’s husband and</p>
-                        <p>It is often frustrating to attempt to plan meals that are designed for one. Despite this fact, we are seeing
-                            more and more recipe books and Internet websites that are dedicated to the act of cooking for one. Divorce and
-                            the death of spouses or grown children leaving for college are all reasons that someone accustomed to cooking for
-                            more than one would suddenly need to learn how to adjust all the cooking practices utilized before into a
-                            streamlined plan of cooking that is more efficient for one person creating less</p>
+                        <p>{{ $product->description }}</p>
                     </div>
                 </div>
             </div>
