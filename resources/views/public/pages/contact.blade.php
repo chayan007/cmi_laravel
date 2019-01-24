@@ -38,7 +38,7 @@
                             </div>
                             <div class="info_item">
                                 <i class="lnr lnr-envelope"></i>
-                                <h6><a href="#">prodyutdatta@gmail.com</a></h6>
+                                <h6><a href="#">coremedical247@gmail.com</a></h6>
                                 <p>Send us your query anytime!</p>
                             </div>
                         </div>
