@@ -44,8 +44,8 @@ Route::group( ['middleware' => 'auth' ], function()
     Route::get('/deleteProduct/{id}', 'ProductController@deleteProduct');
     Route::post('/addCategory', 'CatComController@addCategory');
     Route::post('/updateCategory/{id}', 'CatComController@update');
-    Route::get('/deleteCategory/{id}', 'CatComController@delete');
+    Route::get('/deleteCategory/{id}', 'CatComController@deleteCategory');
     Route::post('/addCompany', 'CatComController@addCompany');
     Route::post('/updateCompany/{id}', 'CatComController@update');
-    Route::get('/deleteCompany/{id}', 'CatComController@delete');
+    Route::get('/deleteCompany/{id}', 'CatComController@deleteCompany');
 });

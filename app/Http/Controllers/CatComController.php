@@ -50,4 +50,18 @@ class CatComController extends Controller
         return view('admin.Category');
     }
 
+    public function deleteCategory($id)
+    {
+        $category = Category::where('id', $id)->firstOrFail();
+        $category->delete();
+        return back();
+    }
+
+    public function deleteCompany($id)
+    {
+        $company = Company::where('id', $id)->firstOrFail();
+        $company->delete();
+        return back();
+    }
+
 }
