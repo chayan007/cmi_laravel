@@ -50,8 +50,12 @@
                             @foreach($pro_ducts as $product)
                                 <div class="col-lg-4 col-md-6">
                                     <div class="single-product">
-                                        <img class="img-fluid" src="{{ Storage::url($product->img_1) }}" style="height: 250px; width: 300px" alt="">
-                                        <div class="product-details">
+                                        @if($product->img1 != NULL)
+                                            <img class="img-fluid" src="{{ Storage::url($product->img_1) }}" style="height: 250px; width: 300px" alt="">
+                                        @else
+                                            <img class="img-fluid" src="{{ asset('images/no.jpg') }}" style="height: 250px; width: 300px" alt="">
+                                        @endif
+                                            <div class="product-details">
                                             <h6>{{ $product->name }}</h6>
                                             <div class="price">
                                                 @if($product->price !=0)
