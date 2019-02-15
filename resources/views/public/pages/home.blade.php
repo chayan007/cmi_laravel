@@ -237,8 +237,11 @@
                             @endif
                             <div class="col-lg-3 col-md-6">
                                 <div class="single-product">
-                                    <img class="img-fluid" src="{{ Storage::url($product->img_1) }}" height="200px" width="350px" alt="">
-                                    <div class="product-details">
+                                    @if($product->img_1 != NULL)
+                                        <img class="img-fluid" src="{{ Storage::url($product->img_1) }}" style="height: 250px; width: 300px" alt="">
+                                    @else
+                                        <img class="img-fluid" src="{{ asset('images/no.jpg') }}" style="height: 250px; width: 300px" alt="">
+                                    @endif                                    <div class="product-details">
                                         <h6>{{ $product->name }}</h6>
                                         <div class="price">
                                             @if($product->price !=0)
